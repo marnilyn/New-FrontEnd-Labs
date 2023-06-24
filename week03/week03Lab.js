@@ -40,6 +40,8 @@ let alphabetString = 'abcdefghijklmnopqrstuvwxyz';
  * 
  * ↓ YOUR CODE HERE ↓ */
 
+let abcArray = alphabetString.split('')
+console.log (abcArray)
 
 
 
@@ -60,7 +62,8 @@ let alphabetArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
  * ↓ YOUR CODE HERE ↓ */
 
 
-
+alphabetArray.reverse(); 
+console.log(alphabetArray.join(''));
 
 
 
@@ -82,8 +85,13 @@ let array1 = [1, 5, 6, 9, 10, 14];
  * 
  * ↓ YOUR CODE HERE ↓ */
 
-
-
+console.log("Step 1: Array1 ", array1);
+console.log ("Step 2: 3rd element: " + array1[2])
+console.log ("Step 3: last element: " + [array1.length - 1])
+array1.push (16,3)
+console.log ("Step 4: Updated Array: ", array1)
+console.log ("Step 5: Print 3rd element again: " + array1[2])
+console.log ("Step 6: Last element again: " + [array1.length - 1] )
 
 
 
@@ -102,6 +110,19 @@ Question 4: Todo List \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
+var myTodoList = []
+myTodoList.push ("item1", "item2", "item3")
+console.log ("Step 2: 3 to do items: ", myTodoList)
+myTodoList.splice(1,1)
+console.log ("Step 3: Removed second element: ", myTodoList)
+
+var yourTodoList = []
+yourTodoList.push("item4", "item5")
+console.log ("Step 4: Array of yourTodoList: ", yourTodoList)
+
+
+let ourTodoList = myTodoList.concat(yourTodoList); 
+console.log("Step 5: ourTodoList: ", ourTodoList);
 
 
 
@@ -122,7 +143,12 @@ Question 5: isEven  \n`);
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-
+function isEven (x) {
+       if (x % 2 === 0) {return true;
+       } else {
+              return false;
+       }
+}
 
 
 
@@ -130,10 +156,10 @@ Question 5: isEven  \n`);
 /* ↑ YOUR CODE HERE ↑ */
 
 //! Sample test cases for the above isEven function (uncomment to test)
-//console.log(isEven(2));   //should return true
-//console.log(isEven(3));   //should return false
-//console.log(isEven(4));   //should return true
-//console.log(isEven(5));   //should return false
+// console.log(isEven(2));   //should return true = yes
+// console.log(isEven(3));   //should return false = yes
+console.log(isEven(4));   //should return true = yes
+//console.log(isEven(5));   //should return false = yes
 
 
 
@@ -152,15 +178,19 @@ Question 6: addingMachine \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
-
-
+function addingMachine(array) {
+for (let i = 0; i < array.length; i++) {
+       (sum += array[i])
+}
+return sum;
+}
 
 
 /* ↑ YOUR CODE HERE ↑ */
 
 //! Sample test cases for the above isEven function (uncomment to test)
-//console.log(addingMachine([1, 2, 3, 4, 5]));                    //should return 15
-//console.log(addingMachine([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));    //should return 55
+// console.log(addingMachine([1, 2, 3, 4, 5]));                    //should return 15
+console.log(addingMachine([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));    //should return 55
 //console.log(addingMachine([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])); //should return 120
 
 
@@ -255,3 +285,14 @@ Question 9: whichArrayIsLonger  \n`);
 //console.log(whichArrayIsLonger([1, 2, 3, 4, 5], [1, 2, 3, 4]));    //should return [1, 2, 3, 4, 5]
 //console.log(whichArrayIsLonger([1, 2, 3, 4], [1, 2, 3, 4, 5, 6])); ///should return [1, 2, 3, 4, 5, 6]
 //console.log(whichArrayIsLonger([1, 2, 3, 4], [1, 2, 3, 4]));       //should return false (because they are the same length)
+
+
+var fs = require("fs");
+var input = fs.readFileSync(process.stdin.fd, "utf-8").trim().split("\n");
+var totalBill = parseInt(input[0]);
+
+function calculateTip(amount) {
+  var tip = amount * 0.2;
+  return Math.ceil(tip);
+}
+console.log(result);
